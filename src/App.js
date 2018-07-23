@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Menu, Icon } from "antd";
-import NewSnack from "./NewSnack";
+import AddSnack from "./AddSnack";
 import Snack from "./Snack";
 import axios from "axios";
 
@@ -50,7 +50,7 @@ class App extends Component {
           </Menu.Item>
         </Menu>
 
-        <NewSnack />
+        <AddSnack />
         <Snack />
       </div>
     );

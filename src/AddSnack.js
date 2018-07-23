@@ -1,10 +1,38 @@
 import { Button, Modal, Form, Input } from "antd";
+import axios from "axios";
 import React from "react";
 
 const FormItem = Form.Item;
 
 const CollectionCreateForm = Form.create()(
   class extends React.Component {
+    /*constructor(props) {
+      super(props);
+      this.state = {
+        name: "",
+        requestedBy: "",
+        amazonURL: ""
+      };
+
+      this.captureChange = this.captureChange.bind(this);
+      this.submitForm = this.submitForm.bind(this);
+    }
+
+    captureChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+
+    submitForm(e) {
+      e.preventDefault();
+
+      axios.post("http://localhost:3000/api/snacks", {
+        name: this.state.name,
+        requestedBy: this.state.requestedBy,
+        amazonURL: this.state.amazonURL
+      });
+    }*/
     render() {
       const { visible, onCancel, onCreate, form } = this.props;
       const { getFieldDecorator } = form;
@@ -37,7 +65,7 @@ const CollectionCreateForm = Form.create()(
   }
 );
 
-class NewSnack extends React.Component {
+class AddSnack extends React.Component {
   state = {
     visible: false
   };
@@ -84,4 +112,4 @@ class NewSnack extends React.Component {
   }
 }
 
-export default NewSnack;
+export default AddSnack;

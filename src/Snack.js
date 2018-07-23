@@ -28,12 +28,15 @@ class Snack extends React.Component {
         <li key={index}>
           <Card
             className="snack"
-            title={"hi"}
+            title={`${snack.name}`}
             /*extra={<a href="#">More</a>}*/
             style={{ width: 300 }}
           >
             <p>{snack.name}</p>
             <p>{snack.requestedBy}</p>
+            <a href={`${snack.amazonURL}`} target="_blank">
+              LINK
+            </a>
           </Card>
         </li>
       );

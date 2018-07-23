@@ -23,11 +23,25 @@
   font-size: large;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 .add,
 .snack {
   margin-top: 20px;
   margin-left: 20px;
 }
+
+/*.add {
+  background-color: #ed3c33;
+  border: none;
+}
+
+.add:hover {
+  background-color: #f37871;
+}*/
 
 .snack {
   margin-right: 20px;
