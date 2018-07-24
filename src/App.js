@@ -8,16 +8,13 @@ import axios from "axios";
 class App extends Component {
   /*constructor() {
     super();
-
     this.state = {
       snacks: []
     };
   }
-
   componentDidMount() {
     this.getSnacks();
   }
-
   getSnacks() {
     axios
       .get(`http://localhost:3000/api/snacks`)

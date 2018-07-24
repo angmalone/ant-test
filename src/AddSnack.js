@@ -1,52 +1,26 @@
-import { Button, Modal, Form, Input } from "antd";
+import React, { Component } from "react";
+import "antd/dist/antd.css";
+import { Button, Modal, Form, Input, Radio } from "antd";
 import axios from "axios";
-import React from "react";
 
 const FormItem = Form.Item;
 
 const CollectionCreateForm = Form.create()(
   class extends React.Component {
-    /*constructor(props) {
-      super(props);
-      this.state = {
-        name: "",
-        requestedBy: "",
-        amazonURL: ""
-      };
-
-      this.captureChange = this.captureChange.bind(this);
-      this.submitForm = this.submitForm.bind(this);
-    }
-
-    captureChange(e) {
-      this.setState({
-        [e.target.name]: e.target.value
-      });
-    }
-
-    submitForm(e) {
-      e.preventDefault();
-
-      axios.post("http://localhost:3000/api/snacks", {
-        name: this.state.name,
-        requestedBy: this.state.requestedBy,
-        amazonURL: this.state.amazonURL
-      });
-    }*/
     render() {
       const { visible, onCancel, onCreate, form } = this.props;
       const { getFieldDecorator } = form;
       return (
         <Modal
           visible={visible}
-          title="Add a Snack!"
-          okText="Submit"
+          title="Add a snack!"
+          okText="Add!"
           onCancel={onCancel}
           onOk={onCreate}
         >
           <Form layout="vertical">
-            <FormItem label="Snack">
-              {getFieldDecorator("title", {
+            <FormItem label="Snack Name">
+              {getFieldDecorator("name", {
                 rules: [
                   {
                     required: true,
@@ -55,8 +29,8 @@ const CollectionCreateForm = Form.create()(
                 ]
               })(<Input />)}
             </FormItem>
-            <FormItem label="Amazon Link">
-              {getFieldDecorator("description")(<Input type="textarea" />)}
+            <FormItem label="Amazon URL">
+              {getFieldDecorator("amazonURL")(<Input type="textarea" />)}
             </FormItem>
           </Form>
         </Modal>
@@ -84,8 +58,14 @@ class AddSnack extends React.Component {
       if (err) {
         return;
       }
-
+      axios.post("http://localhost:3000/api/snacks", {
+        /*values: JSON.stringify(this.values),
+        contentType: "application/json"*/
+        name: values.name,
+        amazonURL: values.amazonURL
+      });
       console.log("Received values of form: ", values);
+      console.log(JSON.stringify(values));
       form.resetFields();
       this.setState({ visible: false });
     });
@@ -98,7 +78,7 @@ class AddSnack extends React.Component {
   render() {
     return (
       <div>
-        <Button className="add" type="primary" onClick={this.showModal}>
+        <Button type="primary" className="snack" onClick={this.showModal}>
           Add a Snack!
         </Button>
         <CollectionCreateForm
