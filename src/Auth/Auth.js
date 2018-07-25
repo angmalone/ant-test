@@ -6,7 +6,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "engageproject.auth0.com",
     clientID: "A83boy0NB4dAZADpo4HbMmkOcOIlPG75",
-    redirectUri: "http://localhost:3000/callback",
+    redirectUri: "http://localhost:3001/callback",
     audience: "https://engageproject.auth0.com/userinfo",
     responseType: "token id_token",
     scope: "openid"

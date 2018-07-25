@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AddSnack from "../AddSnack";
+import Snack from "../Snack";
 
 class Home extends Component {
   login() {
@@ -8,7 +10,12 @@ class Home extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="container">
-        {isAuthenticated() && <h4>You are logged in!</h4>}
+        {isAuthenticated() && (
+          <div>
+            <AddSnack />
+            <Snack />
+          </div>
+        )}
         {!isAuthenticated() && (
           <h4>
             You are not logged in! Please{" "}
