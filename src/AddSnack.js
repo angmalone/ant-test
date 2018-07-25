@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
-import { Button, Modal, Form, Input, Radio } from "antd";
+import { Button, Modal, Form, Input } from "antd";
 import axios from "axios";
 
 const FormItem = Form.Item;
