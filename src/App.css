@@ -23,7 +23,8 @@
   font-size: large;
 }
 
-ul {
+ul,
+li {
   list-style-type: none;
   padding: 0;
 }
@@ -47,6 +48,10 @@ ul {
   margin-right: 20px;
 }
 
+.vote {
+  margin-left: 165px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -58,4 +63,16 @@ ul {
 
 .collection-create-form_last-form-item {
   margin-bottom: 0;
+}
+
+.snack-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.snack {
+  display: inline-block;
+  min-width: 20%;
 }

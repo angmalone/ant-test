@@ -1,4 +1,4 @@
-import { Card /*, Col, Row*/ } from "antd";
+import { Card, Icon, Button } from "antd";
 import React from "react";
 import axios from "axios";
 
@@ -29,7 +29,6 @@ class Snack extends React.Component {
           <Card
             className="snack"
             title={`${snack.name}`}
-            /*extra={<a href="#">More</a>}*/
             style={{ width: 300 }}
           >
             <p>{snack.name}</p>
@@ -37,11 +36,14 @@ class Snack extends React.Component {
             <a href={`${snack.amazonURL}`} target="_blank">
               LINK
             </a>
+            <Button className="vote">
+              <Icon type="heart-o" />
+            </Button>
           </Card>
         </li>
       );
     });
-    return <ul>{snacks}</ul>;
+    return <div className="snack-row">{snacks}</div>;
   }
 }
 
