@@ -78,7 +78,12 @@ class AddSnack extends React.Component {
   render() {
     return (
       <div>
-        <Button type="primary" className="snack" onClick={this.showModal}>
+        <Button
+          className="add"
+          type="primary"
+          className="snack"
+          onClick={this.showModal}
+        >
           Add a Snack!
         </Button>
         <CollectionCreateForm

@@ -22,6 +22,7 @@ class Snack extends React.Component {
         console.log(err);
       });
   }
+
   render() {
     let snacks = this.state.snacks.map((snack, index) => {
       return (

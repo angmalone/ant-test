@@ -1,11 +1,7 @@
 @import "~antd/dist/antd.css";
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
 .App-header {
@@ -36,29 +32,20 @@ li {
 }
 
 /*.add {
-  background-color: #ed3c33;
+  background-color: #ed3c33 !important;
   border: none;
 }
 
 .add:hover {
-  background-color: #f37871;
-}*/
-
+  background-color: #f37871 !important;
+}
+*/
 .snack {
   margin-right: 20px;
 }
 
 .vote {
   margin-left: 165px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .collection-create-form_last-form-item {

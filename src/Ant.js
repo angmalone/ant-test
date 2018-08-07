@@ -36,6 +36,7 @@ class Ant extends Component {
             </Menu.Item>
           )}
         </Menu>
+        {!isAuthenticated() && <div>PLEASE LOG IN!</div>}
       </div>
     );
   }
