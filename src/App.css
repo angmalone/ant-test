@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
 .App-header {
   background-color: #222;
   height: 150px;
@@ -30,7 +35,6 @@ li {
   margin-top: 20px;
   margin-left: 20px;
 }
-
 /*.add {
   background-color: #ed3c33 !important;
   border: none;
@@ -42,10 +46,6 @@ li {
 */
 .snack {
   margin-right: 20px;
-}
-
-.vote {
-  margin-left: 165px;
 }
 
 .collection-create-form_last-form-item {
@@ -62,4 +62,35 @@ li {
 .snack {
   display: inline-block;
   min-width: 20%;
+}
+
+.login {
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.snackid {
+  display: none;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.warning {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edit {
+  display: inline;
+  align-content: left;
+  align-items: left;
+}
+
+.items {
+  display: inline-block;
+  margin-left: -18px;
+  padding-left: 20px;
 }

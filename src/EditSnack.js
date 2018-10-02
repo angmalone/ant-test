@@ -13,8 +13,8 @@ const CollectionCreateForm = Form.create()(
       return (
         <Modal
           visible={visible}
-          title="Add a tip!"
-          okText="Add!"
+          title="Edit"
+          okText="Edit!"
           onCancel={onCancel}
           onOk={onCreate}
         >
@@ -36,7 +36,7 @@ const CollectionCreateForm = Form.create()(
   }
 );
 
-class AddSnack extends React.Component {
+class EditSnack extends React.Component {
   state = {
     visible: false
   };
@@ -55,9 +55,12 @@ class AddSnack extends React.Component {
       if (err) {
         return;
       }
-      axios.post("https://pumpbot-test.herokuapp.com/api/tips/", {
-        tip: values.tip
-      });
+      axios.put(
+        "https://pumpbot-test.herokuapp.com/api/tips/5bb244cf1d88ee0004389828",
+        {
+          tip: values.tip
+        }
+      );
       console.log("Received values of form: ", values);
       console.log(JSON.stringify(values));
       form.resetFields();
@@ -73,12 +76,12 @@ class AddSnack extends React.Component {
     return (
       <div>
         <Button
-          className="add"
+          className="edit"
           type="primary"
           className="snack"
           onClick={this.showModal}
         >
-          Add a Tip!
+          Edit
         </Button>
         <CollectionCreateForm
           wrappedComponentRef={this.saveFormRef}
@@ -91,4 +94,4 @@ class AddSnack extends React.Component {
   }
 }
 
-export default AddSnack;
+export default EditSnack;
