@@ -24,7 +24,7 @@ const CollectionCreateForm = Form.create()(
                 rules: [
                   {
                     required: true,
-                    message: "Please enter text!"
+                    message: "Please enter a snack name!"
                   }
                 ]
               })(<Input />)}
@@ -56,7 +56,8 @@ class AddSnack extends React.Component {
         return;
       }
       axios.post("https://pumpbot-test.herokuapp.com/api/tips/", {
-        tip: values.tip
+        tip: values.tip,
+        beenUsed: false
       });
       console.log("Received values of form: ", values);
       console.log(JSON.stringify(values));
@@ -78,7 +79,7 @@ class AddSnack extends React.Component {
           className="snack"
           onClick={this.showModal}
         >
-          Add a Tip!
+          Add a Snack!
         </Button>
         <CollectionCreateForm
           wrappedComponentRef={this.saveFormRef}
